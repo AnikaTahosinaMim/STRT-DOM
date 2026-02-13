@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 id="title">My fav food</h2>
+    <ul >
+        <li class="olList">Apple</li>
+        <li class="olList">orange</li>
+        <li class="olList">banana</li>
+    </ul>
+
+
+    <script>
+        const tittleText = document.getElementById("title")
+        tittleText.innerText = "My Favorute Foos"
+        // console.log(tittleText)
+        const list = document.getElementsByClassName("olList")
+        console.log(list)
+        for(const nam of list){
+            console.log(nam.innerHTML)
+
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Start Dom</h1>
+    <ul>
+        <li>Home</li>
+        <li>Name</li>
+        <li>About</li>
+    </ul>
+    <div>
+        <div> 
+            <h1>Anika Tahosina MIm</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, repellat!</p>
+            <button>Click me</button>
+        </div>
+    </div>
+    <script>
+        console.log("Hlw dom")
+        const liList = document.getElementsByTagName('li')
+        console.log(liList)
+        console.log(liList)
+        for (const name of liList) {
+            console.log(name.innerText)
+            console.log(name.innerHTML)
+        }
+        let divName = document.getElementsByTagName('div')
+        console.log(divName);
+        for(const name of divName){
+            // console.log(name)
+            // console.log(name.innerHTML)
+            
+        }
+
+    </script>
+
+</body>
+
+</html>

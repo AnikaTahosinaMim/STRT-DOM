@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- option 1 for click event handle -->
+    <h2>Hlw EveryOne</h2>
+    <button onclick="console.log(9)">click</button>
+    <button onclick="console.log('mim')">ADD Here</button>
+    <br>
+
+    <!-- option 2 for click event handle -->
+    <button onclick="makeGreen()">Make green</button>
+    <button onclick="makeRed()">Make red</button>
+    <br>
+    <button onclick="makeBlack()">make black</button>
+    <br>
+    <button onclick ="makePink()">Make pink</button>
+
+    <button id="blue">Make Blue</button>
+    <button id="purple">Make purple</button>
+
+
+    <script>
+        function makeBlack (){
+            document.body.style.backgroundColor = 'black'
+        }
+        function makePink(){
+            document.body.style.backgroundColor = 'pink'
+        }
+       
+        
+    </script>
+    <script src="./onclick.js"></script>
+
+</body>
+
+</html>

@@ -20,20 +20,24 @@
     <br>
     <button onclick="makeBlack()">make black</button>
     <br>
-    <button onclick ="makePink()">Make pink</button>
+    <button onclick="makePink()">Make pink</button>
 
     <button id="blue">Make Blue</button>
     <button id="purple">Make purple</button>
+    <button id="yellow">make yellow</button>
+    <br> <br>
+    <!-- option 04..addevenLisener -->
+    <button id="gold"> make gold</button>
+    <br>
+    <button id="gray">make gray</button>
+    <br>
+    <button id="aqua">make aquea</button>
 
 
     <script>
-        function makeBlack (){
-            document.body.style.backgroundColor = 'black'
-        }
-        function makePink(){
-            document.body.style.backgroundColor = 'pink'
-        }
-       
+        document.getElementById("aqua").addEventListener("click",function(){
+            document.body.style.backgroundColor = 'aqua'
+        })
         
     </script>
     <script src="./onclick.js"></script>

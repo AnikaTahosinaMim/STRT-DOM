@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id ="select">select one from multiple</h1>
+    <input type="text" placeholder="type delete" name="" id="input-delete">
+    <button id="btn-delete" disabled>Delete</button>
+
+
+
+    <script>
+        document.getElementById("input-delete").addEventListener("keyup",function(event){
+            const text = event.target.value
+            const BtnDlete = document.getElementById('btn-delete')
+            const select = document.getElementById('select')
+            if(text==='delete'){
+                BtnDlete.removeAttribute('disabled') 
+                select.style.display='none'
+            }
+            else{
+                BtnDlete.setAttribute('disabled',true)
+            }
+
+            
+        })
+    </script>
+
+
+    <!-- <script>
+        document.getElementById("input-delete").addEventListener("keyup", function (event) {
+            // console.log("buttom click")
+            const text = event.target.value
+            const BtnDelete = document.getElementById("btn-delete")
+
+            if (text === 'delete') {
+                console.log("delte")
+                BtnDelete.removeAttribute('disabled')
+                const selectElement = document.getElementById('select')
+                selectElement.style.display = 'none'
+            }
+            else {
+                BtnDelete.setAttribute('disabled', true)
+            }
+
+        })
+    </script> -->
+
+</body>
+
+</html>

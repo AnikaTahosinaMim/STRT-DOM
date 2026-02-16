@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coment Box</title>
+    <style>
+        .coment {
+            background-color: rgb(80, 50, 12);
+            border: 2px solid green;
+            color: white;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>All comment Here</h2>
+    <div id="commentContainer">
+        <p class="coment">Lorem ipsum dolor sit amet consectetur Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Repellendus cumque provident excepturi dignissimos corporis facere illo error suscipit esse
+            consequatur. adipisicing elit. Earum sequi tenetur molestias quod dolores odit
+            , nam officiis temporibus minus similique.</p>
+        <p class="coment">Lorem ipsum dolor sit amet consectetur adipisicing Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Consequuntur error non exercitationem suscipit soluta odit possimus ea consequatur saepe
+            iusto! elit. Earum sequi tenetur molestias quod dolores odit
+            , nam officiis temporibus minus similique.</p>
+        <p class="coment">Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Tempora, iusto. Earum sequi tenetur molestias quod dolores odit
+            , nam officiis temporibus minus similique.</p>
+    </div>
+    <textarea name="" id="comment-box" cols="50" rows="7"></textarea>
+    <br>
+    <button id="post-comment">Post Comment</button>
+
+
+    <script>
+        // handle ta btn
+        document.getElementById("post-comment").addEventListener("click",function(){
+            // console.log("click btn")
+            const CreatText = document.getElementById("comment-box")
+            // console.log(CreatText)
+            const newText = CreatText.value
+            // console.log(newText)
+            const comentConatiner = document.getElementById("commentContainer") 
+            const newElement = document.createElement('p')
+            newElement.classList.add("coment")
+            newElement.innerText = newText
+            comentConatiner.appendChild(newElement)
+            CreatText.value = ''
+        })
+
+    </script>
+    <!-- <script>
+        // // step -01...event handle the btn
+        // document.getElementById("post-comment").addEventListener('click', function () {
+        //     console.log('click')
+        //     // step-02 >>> next get the textarea
+        //     const commentBox = document.getElementById('comment-box')
+        //     const newComment = commentBox.value
+        //     // console.log(newComment)
+        //     // get the container of the element
+        //     const commentContainer = document.getElementById("commentContainer")
+        //     console.log(commentContainer)
+        //     commentContainer.value = newComment
+        //     // step-04 creat a new element
+        //     const newElement = document.createElement('p')
+        //     newElement.innerText = newComment
+        //     // step-05 add style
+        //     newElement.classList.add("coment")
+        //     // appen class
+        //     commentContainer.appendChild(newElement)
+        //     commentBox.value = ''
+        // })
+    </script> -->
+
+</body>
+
+</html>

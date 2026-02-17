@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product-card {
+            border: 2px solid red;
+            background-color: burlywood;
+            border-radius: 5px;
+            padding: 10px;
+            margin: auto;
+        }
+
+        .add-btn {
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+            margin-top: 5px;
+            background-color: brown;
+        }
+
+        .products {
+            display: flex;
+            gap: 0;
+
+        }
+
+        #count {
+            justify-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <p id="count">0</p>
+    <div class="products">
+        <div class="product-card">
+            <img src="" alt="demo.png">
+            <h2 class="catagory-name">Intertainment</h2>
+            <p class="product-name">music</p>
+            <div class="prodect-footer">
+                <span class="producr-price">2500</span>
+                <button class="wish-btn">❤️</button>
+            </div>
+            <button class="add-btn">add card</button>
+
+        </div>
+        <div class="product-card">
+            <img src="" alt="demo.png">
+            <h2 class="catagory-name">Electronics</h2>
+            <p class="product-name">switch</p>
+            <div class="prodect-footer">
+                <span class="producr-price">5500</span>
+                <button class="wish-btn">❤️</button>
+            </div>
+            <button class="add-btn">add card</button>
+
+        </div>
+    </div>
+    <h3>Cart Items:</h3>
+    <div id="cartItems"></div>
+
+    <h3>Total Price: <span id="total">0</span></h3>
+
+    <script>
+        
+        let cart = [];
+        const wishHeat = document.querySelectorAll('.wish-btn')
+        wishHeat.forEach(btn => {
+            btn.addEventListener('click', function () {
+                let countBnt = document.getElementById('count')
+                // console.log(countBnt)
+                let countValue = parseInt(countBnt.innerText)
+                countValue++;
+                countBnt.innerText = countValue
+            })
+        });
+        const buttons = document.querySelectorAll('.add-btn')
+        buttons.forEach(item => {
+            item.addEventListener('click', function (e) {
+                // console.log('btn click')
+                const card = e.target.closest('.product-card')
+                console.log(card)
+                const prodeuctName = card.querySelector('.product-name').textContent;
+                // console.log(prodeuctName)
+                const catagoryName = card.querySelector('.catagory-name').textContent;
+                // console.log(catagoryName)
+                const priceName = card.querySelector('.producr-price').textContent;
+                // console.log(priceName)
+
+                const product = {
+                    name: prodeuctName,
+                    catagory: catagoryName,
+                    price: priceName,
+                    quantity: 1
+                }
+                addToCard(product)
+
+            })
+        })
+
+        function addToCard(product) {
+
+            const existingItem = cart.find(item => item.name === product.name);
+
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push(product);
+            }
+
+            updateCart();
+        }
+        function updateCart() {
+
+            const cartDiv = document.getElementById("cartItems");
+            cartDiv.innerHTML = "";
+
+            let total = 0;
+
+            cart.forEach(item => {
+
+                total += item.price * item.quantity;
+
+                const div = document.createElement("div");
+
+                div.innerHTML = `
+            ${item.name} (x ${item.quantity}) - $ ${item.price * item.quantity}
+        `;
+
+                cartDiv.appendChild(div);
+            });
+
+            document.getElementById("total").innerText = total;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>problem with js dom</title>
+</head>
+
+<body>
+    <div>
+        <ul id="list">
+            <li class="item">item-01</li>
+            <li class="item">item-02</li>
+        </ul>
+        <button id="add">add item</button>
+    </div>
+    <script>
+        const htmlCollection = document.getElementsByClassName('item')
+        const nodeList = document.querySelectorAll('.item')
+        document.getElementById('add').addEventListener('click', function () {
+            const newAddElement = document.createElement('li')
+            newAddElement.innerText = 'new add'
+            newAddElement.classList.add('item')
+            const addList = document.getElementById('list')
+            addList.appendChild(newAddElement)
+            console.log('HTMLCollection :', htmlCollection.length)
+            console.log('NODEList:', nodeList.length)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <h2>Update li items and count</h2>
+        <ol id="container">
+            <li class="item">item</li>
+            <li class="item">item</li>
+            <li class="item">item</li>
+        </ol>
+        <p id="num">3</p>
+        <button id="add">ADD Items</button>
+        <button id="remove">Remove</button>
+    </div>
+
+
+    <script>
+        let count = 3;
+        const update = document.getElementById('num')
+        document.getElementById('add').addEventListener('click', function () {
+            count++;
+            update.innerText = count;
+
+            const newElement = document.createElement('li')
+            newElement.innerText = 'New Add item'
+            newElement.classList.add('item')
+            const conatiner = document.getElementById('container')
+            conatiner.appendChild(newElement)
+        })
+
+
+        document.getElementById('remove').addEventListener('click', function () {
+            count--;
+            update.innerText = count;
+
+            const listItems = container.querySelectorAll('li')
+            if (listItems.length > 0) {
+                const lastItem = listItems[listItems.length - 1]
+                lastItem.remove()
+            }
+
+        })
+    </script>
+</body>
+
+</html>

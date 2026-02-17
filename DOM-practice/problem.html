@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ol id="container">
+            <li>item</li>
+            <li>item</li>
+            <li>item</li>
+        </ol>
+        <p id="item">0</p>
+
+        <button id="add-btn">ADD Item</button>
+    </div>
+    <script>
+        let count = 0
+        const items = document.getElementById('item')
+        document.getElementById('add-btn').addEventListener('click', function () {
+            // console.log('cilck')
+            count++;
+            items.innerText = count
+        })
+    </script>
+
+</body>
+
+</html>

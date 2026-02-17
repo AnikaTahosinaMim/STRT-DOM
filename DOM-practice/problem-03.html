@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>bangladesh</h2>
+    <ul id="list">
+        <li class="ul">Apple</li>
+        <li class="ul">Orange</li>
+        <li class="ul">Banana</li>
+    </ul>
+    <div id="img">
+        <img src="" alt="img.jpj">
+    </div>
+
+    <p id="count">0</p>
+    <button id="btn">click me</button>
+
+
+
+    <script>
+        const elemrnt = document.querySelector('img')
+        // console.log(elemrnt)
+        elemrnt.setAttribute('alt', 'change.jpg')
+
+        // const ulList = document.querySelectorAll("#list")
+        // console.log(ulList)
+        // ulList.forEach(item => {
+        //     item.style.color = 'red'
+        // });
+
+        const ulList = document.getElementsByClassName('ul')
+        // console.log(ulList)
+        for (let item of ulList) {
+            item.style.color = 'red'
+        }
+
+        document.getElementById('btn').addEventListener('click', function () {
+            let count =document.getElementById('count')
+            let countValue = parseInt(count.innerText)
+            countValue++
+            count.innerText = countValue
+            console.log(count)
+        })
+
+
+
+    </script>
+</body>
+
+</html>

@@ -27,19 +27,16 @@
         const elemrnt = document.querySelector('img')
         // console.log(elemrnt)
         elemrnt.setAttribute('alt', 'change.jpg')
-
         // const ulList = document.querySelectorAll("#list")
         // console.log(ulList)
         // ulList.forEach(item => {
         //     item.style.color = 'red'
         // });
-
         const ulList = document.getElementsByClassName('ul')
         // console.log(ulList)
         for (let item of ulList) {
             item.style.color = 'red'
         }
-
         document.getElementById('btn').addEventListener('click', function () {
             let count =document.getElementById('count')
             let countValue = parseInt(count.innerText)
@@ -47,9 +44,6 @@
             count.innerText = countValue
             console.log(count)
         })
-
-
-
     </script>
 </body>
 

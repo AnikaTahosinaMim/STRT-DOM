@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your items</title>
+</head>
+
+<body>
+    <h1>
+        List Your Items-
+    </h1>
+    <p>Here you can add your items and delete if you want</p>
+    <input type="text" id="item-input" placeholder="Enter Items">
+    <button id="btn-add">ADD</button>
+    <p id="count">0</p>
+    <ul id="ul-list"></ul>
+
+    <script>
+        document.getElementById("btn-add").addEventListener("click", function () {
+            console.log("btn click")
+            const taskInput = document.getElementById("item-input")
+            const taskValue = taskInput.value
+            if (taskValue === '') {
+                alert("Please Inter task")
+                return
+            }
+            let countnum = document.getElementById("count")
+            let countValue = parseInt(countnum.innerText)
+            countValue++;
+            countnum.innerText = countValue
+
+
+            const newLi = document.createElement("li")
+            newLi.innerText = taskValue
+            const container = document.getElementById("ul-list")
+            container.append(newLi)
+
+            const deleteBtn = document.createElement('button')
+            deleteBtn.innerText = "delete"
+            deleteBtn.addEventListener("click", function () {
+                newLi.remove()
+                // let countValue = parseInt(countnum.innerText)
+                countValue--;
+                countnum.innerText = countValue
+
+            })
+            newLi.appendChild(deleteBtn)
+            deleteBtn.style.marginLeft = "10px"
+
+            taskInput.value = "";
+        })
+    </script>
+
+
+</body>
+
+</html>

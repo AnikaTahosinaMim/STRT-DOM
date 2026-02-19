@@ -1,51 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>My To-Do List</h1>
+    <!-- <h1>My To-Do List</h1>
 
-<input type="text" id="task-input" placeholder="Enter your task">
-<button id="add-btn">Add</button>
+    <input type="text" id="task-input" placeholder="Enter your task">
+    <button id="add-btn">Add</button>
 
-<ul id="task-list"></ul>
-    <script>
+    <ul id="task-list"></ul> -->
+    <!-- <script>
         document.getElementById("add-btn").addEventListener("click", function () {
-    
-    const inputField = document.getElementById("task-input");
-    const taskText = inputField.value;
 
-    if (taskText === "") {
-        alert("Please enter a task");
-        return;
-    }
+            const inputField = document.getElementById("task-input");
+            const taskText = inputField.value;
 
-    // Create li
-    const li = document.createElement("li");
-    li.innerText = taskText;
+            if (taskText === "") {
+                alert("Please enter a task");
+                return;
+            }
 
-    // Create delete button
-    const deleteBtn = document.createElement("button");
-    deleteBtn.innerText = "Delete";
+            // Create li
+            const li = document.createElement("li");
+            li.innerText = taskText;
 
-    // Delete event
-    deleteBtn.addEventListener("click", function () {
-        li.remove();
-    });
+            // Create delete button
+            const deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "Delete";
 
-    li.appendChild(deleteBtn);
+            // Delete event
+            deleteBtn.addEventListener("click", function () {
+                li.remove();
+            });
 
-    // Add to ul
-    const taskList = document.getElementById("task-list");
-    taskList.appendChild(li);
+            li.appendChild(deleteBtn);
 
-    // Clear input
-    inputField.value = "";
-});
+            // Add to ul
+            const taskList = document.getElementById("task-list");
+            taskList.appendChild(li);
 
+            // Clear input
+            inputField.value = "";
+        });
+
+    </script> -->
+
+    <h2>My Mood List::</h2>
+    <input type="text" id="task-input" placeholder="Enter Your task" value="">
+    <button id="add-btn">ADD</button>
+    <ol id="ul-task"></ol>
+    <!-- <button class="delete"></button> -->
+
+    <script>
+        document.getElementById("add-btn").addEventListener('click', function () {
+            console.log("btn click")
+            const taskInput = document.getElementById("task-input")
+            const taskValue = taskInput.value
+            if (taskValue === "") {
+                alert("Enter Your Task")
+                return
+            }
+            const ulList = document.createElement("li")
+            ulList.innerText = taskValue
+            const NewTask = document.getElementById("ul-task")
+            NewTask.append(ulList)
+            const newBtn = document.createElement('button')
+            newBtn.innerText = 'Delete'
+            newBtn.addEventListener("click", function () {
+                ulList.remove()
+            })
+            ulList.append(newBtn)
+            taskInput.value = "";
+
+
+
+
+        })
     </script>
 </body>
+
 </html>
